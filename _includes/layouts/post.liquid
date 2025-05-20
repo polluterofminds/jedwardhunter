@@ -1,0 +1,22 @@
+---
+layout: layouts/base
+eleventyComputed:
+  image: "{{ image }}"
+  description: "{% if description %}{{ description }}{% else %}A blog post by J. Edward Hunter{% endif %}"
+  title: "{{ title }}"
+---
+<div class="w-3/4 m-auto max-w-[800px] py-6">
+    <h1 class="text-3xl font-bold">{{ title }}</h1>
+    <h3 class="text-md font-light text-gray-600 my-4">
+        <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
+            {{ page.date | formatDate: "medium" }}
+        </time>
+    </h3>
+    <img src="{{ image }}" />
+    <div class="prose max-w-none mt-4">
+        {{ content }}
+    </div>
+    <div class="mt-8">
+    {% include "subscribe.liquid" %}
+    </div>  
+</div>

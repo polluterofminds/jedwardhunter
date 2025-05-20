@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@source "/index.html";
+@source "../index.html";
+@source "./**/*.html";
+@source "./**/*.liquid";
+@source "./_includes/**/*.liquid";
+
+@theme {
+    --color-sand: #DBBB9C;
+    --color-peach: #E89375;
+    --color-pink: #B97475;
+    --color-navy: #475771;
+    --color-army: #5E6746;
+}

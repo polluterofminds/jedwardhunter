@@ -1,0 +1,129 @@
+---
+layout: layouts/base.liquid
+---
+
+<div class="w-full py-20">
+  <div
+    class="w-4/5 m-auto max-w-[1200px] flex flex-col md:flex-row items-center"
+  >
+    <div class="w-1/3 m-auto text-center">
+      <img
+        src="/assets/images/leaving_arizona.png"
+        alt="Leaving Arizona, a short story collection"
+      />
+      <div class="mt-8 mb-8 md:mb-0">
+        <a
+          class="bg-gray-900 text-white uppercase px-4 py-2 text-xs md:text-sm"
+          href=""
+          >Buy the book</a
+        >
+      </div>
+    </div>
+    <div class="w-2/3">
+      <div>
+        <blockquote class="text-lg font-bold">
+          "J. Edward Hunter's blistering vision of the southwest and its
+          people—abused, desperate, in love—is both unforgiving and suffused
+          with empathy. A compelling and harrowing debut."
+        </blockquote>
+        <p class="mt-4">
+          — Stephanie Feldman, author of <i>Saturnalia</i> and
+          <i>The Angel of Losses</i>
+        </p>
+      </div>
+      <div class="mt-8">
+        <blockquote class="text-lg font-bold">
+          "J. Edward Hunter is the real goddamn deal. Leaving Arizona is one of
+          the best new collections of minimalist fiction I've read in years.
+          Like its title, this book is sweltering, and brutal, and a sort of
+          cross-your-fingers hopeful that proves why hope can be as dangerous as
+          despair."
+        </blockquote>
+        <p class="mt-4">
+          — Nick Gregorio, author of <i>Launch Me To The Stars</i> and
+          <i>Good Grief</i>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w-3/4 h-px m-auto border-b border-gray-200 " />
+<div class="w-4/5 m-auto max-w-[1200px]">
+  <div class="flex flex-col lg:flex-row w-full">
+    <div id="posts" class="w-full lg:w-3/5 pt-6">
+      {% assign reversedPosts = collections.post | reverse %} {% for post in
+      reversedPosts limit: 5 %}
+      <div class="not-first:mt-8 border-b border-gray-200 last:border-b-0">
+        <a href="{{ post.url }}">
+          <div class="flex flex-col lg:flex-row lg:justify-between">
+            <div>
+              <h3 class="text-xl font-bold">{{ post.data.title }}</h3>
+              <p class="font-light my-2">{{ post.data.description }}</p>
+              <div class="my-2">
+                <time
+                  class="text-xs text-gray-400"
+                  datetime="{{ post.data.date | date: '%Y-%m-%d' }}"
+                >
+                  {{ post.data.date | formatDate: "medium" }}
+                </time>
+              </div>
+            </div>
+            <img
+              src="{{ post.data.image }}"
+              class="md:inline hidden p-4 rounded rounded-md w-[200px] h-auto"
+            />
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="w-full lg:w-2/5 lg:pl-4 pt-0" id="subscribe">
+      {% include "subscribe.liquid" %}
+    </div>
+  </div>
+</div>
+<div class="pt-8 h-px m-auto border-b border-gray-200 " />
+<div class="w-full py-20">
+  <div class="w-4/5 m-auto max-w-[1200px] flex flex-col md:flex-row">
+    <div class="w-1/3 m-auto text-center">
+      <img src="/assets/images/me.jpg" alt="J. Edward Hunter, author" />
+    </div>
+    <div id="about" class="w-2/3 m-auto mt-8 md:mt-0 md:px-4">
+      <h3 class="font-bold text-2xl">J. Edward Hunter</h3>
+      <p class="mt-4">
+        J. Edward Hunter lived most of his life in the Sonoran Desert, and the
+        region still powers his imagination. He currently lives in Dallas with
+        his wife and two sons.
+      </p>
+      <p class="mt-4">
+        He received his MFA from Arcadia University in 2017. His short stories
+        have appeared in dozens of magazines and journals.
+      </p>
+      <p class="mt-4">
+        When he isn't writing, you can probably find him on a baseball diamond
+        coaching youth teams or sitting in the stands watching a Major League
+        game.
+      </p>
+      <div class="mt-6">
+        <h3 class="text-lg font-bold" id="contact">Contact</h3>
+        <p class="mt-4">
+          You can reach J. Edward Hunter via email or on Threads.
+        </p>
+        <ul class="mt-4">
+          <li>
+            Email:
+            <a class="underline" href="mailto:hello@jedwardhunter.com"
+              >hello@jedwardhunter.com</a
+            >
+          </li>
+          <li>
+            Threads:
+            <a class="underline" href="https://www.threads.com/@jedwardhunter"
+              >https://www.threads.com/@jedwardhunter</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
